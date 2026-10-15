@@ -10,6 +10,14 @@ def call(String projectName = 'defaultProject') {
     stage('Build') {
         bat 'dotnet build --configuration Release'
     }
+
+    stage('Test') {
+        bat 'dotnet test --configuration Release'
+    }
+
+    stage('Publish') {
+        bat 'dotnet publish --configuration Release --output publish'
+    }
 }
 
 return this
