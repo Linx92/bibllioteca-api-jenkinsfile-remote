@@ -1,5 +1,5 @@
 def call( Map config = [:] ) {
-   def solutionFile = configu.solution?:'.'
+   def solutionFile = config.solution?:'.'
 
     bat """
         @echo off
