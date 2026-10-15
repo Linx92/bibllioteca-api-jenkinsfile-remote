@@ -11,3 +11,5 @@ def call(String projectName = 'defaultProject') {
         bat 'dotnet build --configuration Release'
     }
 }
+
+return this
