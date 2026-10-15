@@ -1,27 +1,13 @@
-def call( string projectName = 'defaultProject'){
-    stage('Checkout App'){
-        steps{
-            script{
-                checkout scm
-            }
-        }
+def call(String projectName = 'defaultProject') {
+    stage('Checkout App') {
+        checkout scm
     }
 
-    stage('Restore Dependencies'){
-        steps{
-            script{
-                bat 'dotnet restore'
-            }
-        }
+    stage('Restore Dependencies') {
+        bat 'dotnet restore'
     }
 
-    stage('Build'){
-        steps{
-            script{
-                bat 'dotnet build --configuration Release'
-            }
-        }
+    stage('Build') {
+        bat 'dotnet build --configuration Release'
     }
 }
-
-return this
